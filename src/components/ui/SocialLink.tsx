@@ -15,6 +15,8 @@ const SocialLink: React.FC<Props> = ({text, link, icon}) => {
 					link ? 'text-sky-500 hover:text-sky-400' : ''
 				}`}
 				href={link}
+				target="_blank"
+				rel="noreferrer"
 			>
 				{text}
 			</a>
