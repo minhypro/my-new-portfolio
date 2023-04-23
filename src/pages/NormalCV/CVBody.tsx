@@ -15,36 +15,91 @@ const CVHeader: FC = () => {
 	return (
 		<div className="flex">
 			<div className="relative basis-1/4 pr-6">
-				<h2 className="text-2xl font-bold uppercase text-cyan-700">
-					Contact
-				</h2>
-				<div className="absolute w-[80%] border border-cyan-700"></div>
-				<SocialLink text="Da Nang, Viet Nam" icon={<MapPinIcon />} />
-				<SocialLink text="0785 497 999" icon={<PhoneIcon />} />
-				<SocialLink
-					text="minhypro"
-					link="https://github.com/minhypro"
-					icon={<VscGithubAlt className="h-6 w-6" />}
-				/>
-				<SocialLink
-					text="Minh Y (Mike) Le"
-					link="https://www.linkedin.com/in/minh-y-le-930118157/"
-					icon={<AiOutlineLinkedin className="h-6 w-6" />}
-				/>
-				<SocialLink
-					text="leminhy969@gmail.com"
-					link="mailto:leminhy969@gmail.com"
-					icon={<EnvelopeIcon />}
-				/>
-				<h2 className="text-2xl font-bold uppercase text-cyan-700">
-					Technical skill
-				</h2>
-				<div className="absolute w-[80%] border border-cyan-700"></div>
-				{technologies.map(element => (
-					<div key={element.name} className="mt-6 inline-block">
-						<img width={40} className="mx-3" src={element.icon} />
+				<div className="my-6">
+					<h2 className="text-2xl font-bold uppercase text-cyan-700">
+						Contact
+					</h2>
+					<div className="absolute w-[80%] border border-cyan-700"></div>
+					<SocialLink
+						text="Da Nang, Viet Nam"
+						icon={<MapPinIcon />}
+					/>
+					<SocialLink text="0785 497 999" icon={<PhoneIcon />} />
+					<SocialLink
+						text="minhypro"
+						link="https://github.com/minhypro"
+						icon={<VscGithubAlt className="h-6 w-6" />}
+					/>
+					<SocialLink
+						text="Minh Y (Mike) Le"
+						link="https://www.linkedin.com/in/minh-y-le-930118157/"
+						icon={<AiOutlineLinkedin className="h-6 w-6" />}
+					/>
+					<SocialLink
+						text="leminhy969@gmail.com"
+						link="mailto:leminhy969@gmail.com"
+						icon={<EnvelopeIcon />}
+					/>
+					<div className="my-6"></div>
+					<h2 className="text-2xl font-bold uppercase text-cyan-700">
+						Technical skill
+					</h2>
+					<div className="absolute w-[80%] border border-cyan-700"></div>
+					{technologies.map(element => (
+						<div key={element.name} className="mt-6 inline-block">
+							<img
+								width={40}
+								className="mx-3"
+								src={element.icon}
+							/>
+						</div>
+					))}
+				</div>
+				<div className="my-6">
+					<h2 className="text-2xl font-bold uppercase text-cyan-700">
+						Soft skill
+					</h2>
+					<div className="absolute w-[80%] border border-cyan-700"></div>
+					<div className="my-2 break-words">
+						{[
+							'Self-learning',
+							'Time Management',
+							'Communication',
+							'Adaptability',
+							'Problem-solving',
+							'Teamwork',
+							'Attention to Detail',
+							'Confidence',
+						].map((e, i) => (
+							<span
+								key={i}
+								className="mb-2 mr-2 inline-block rounded bg-cyan-700 px-2 text-white"
+							>
+								{e}
+							</span>
+						))}
 					</div>
-				))}
+				</div>
+				<div className="my-6">
+					<h2 className="text-2xl font-bold uppercase text-cyan-700">
+						Languages
+					</h2>
+					<div className="absolute w-[80%] border border-cyan-700"></div>
+					<div className="my-2 break-words">
+						{[
+							{lang: 'Vietnamese', level: 'Native speaker'},
+							{lang: 'English', level: 'Upper-intermediate'},
+							{lang: 'Thai', level: 'Advanced'},
+						].map((e, i) => (
+							<p key={i} className="mb-2">
+								<span className="font-semibold">
+									{e.lang}:{' '}
+								</span>
+								<span>{e.level}</span>
+							</p>
+						))}
+					</div>
+				</div>
 			</div>
 			<div className="basis-3/4 p-6 ">
 				<div className="relative mb-6">
@@ -113,7 +168,7 @@ const CVHeader: FC = () => {
 					/>
 					<Projects
 						name="Thai learning application - Thai Client"
-						technologies="Typescript, ReactJS, Tailwind, GSAP, Framer Motion"
+						technologies="Typescript, ReactJS, Tailwind, GSAP, Framer Motion, Speech Recognition"
 						description="A language study app offers a variety of exercises and interactive lessons, as well as quizzes and games to enhance vocabulary, pronunciation, reading, and writing skills."
 					/>
 				</div>

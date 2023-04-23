@@ -3,7 +3,7 @@
 **/*.ejs
 **/*.html
 
-
+yarn.lock
 /node_modules
 
 /config
