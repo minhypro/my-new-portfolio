@@ -2,7 +2,7 @@ import React from 'react'
 
 const Avatar: React.FC = () => {
 	return (
-		<div className="mx-auto w-full max-w-[50rem]">
+		<div className="mx-auto w-full max-w-[19rem]">
 			<svg
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"

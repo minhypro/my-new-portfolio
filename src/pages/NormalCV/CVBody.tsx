@@ -12,39 +12,54 @@ import Experience from './Experience'
 import Projects from './Projects'
 
 const CVHeader: FC = () => {
+	const renderLeftHeading = (text: string) => (
+		<>
+			<h2 className="text-2xl font-bold uppercase text-cyan-700">
+				{text}
+			</h2>
+			<div className="absolute w-full border border-cyan-700 lg:w-[80%]"></div>
+		</>
+	)
+
+	const renderRightHeading = (text: string) => (
+		<>
+			<h2 className="text-2xl font-bold uppercase text-cyan-700 xl:text-4xl">
+				{text}
+			</h2>
+			<div className="absolute w-full border border-cyan-700 xl:left-[-20px] xl:w-[105%]"></div>
+		</>
+	)
+
 	return (
-		<div className="flex">
-			<div className="relative basis-1/4 pr-6">
-				<div className="my-6">
-					<h2 className="text-2xl font-bold uppercase text-cyan-700">
-						Contact
-					</h2>
-					<div className="absolute w-[80%] border border-cyan-700"></div>
-					<SocialLink
-						text="Da Nang, Viet Nam"
-						icon={<MapPinIcon />}
-					/>
-					<SocialLink text="0785 497 999" icon={<PhoneIcon />} />
-					<SocialLink
-						text="minhypro"
-						link="https://github.com/minhypro"
-						icon={<VscGithubAlt className="h-6 w-6" />}
-					/>
-					<SocialLink
-						text="Minh Y (Mike) Le"
-						link="https://www.linkedin.com/in/minh-y-le-930118157/"
-						icon={<AiOutlineLinkedin className="h-6 w-6" />}
-					/>
-					<SocialLink
-						text="leminhy969@gmail.com"
-						link="mailto:leminhy969@gmail.com"
-						icon={<EnvelopeIcon />}
-					/>
-					<div className="my-6"></div>
-					<h2 className="text-2xl font-bold uppercase text-cyan-700">
-						Technical skill
-					</h2>
-					<div className="absolute w-[80%] border border-cyan-700"></div>
+		<div className="flex flex-col-reverse lg:flex-row">
+			<div className="relative basis-1/4 xl:pr-6">
+				<div className="my-4 xl:my-6">
+					{renderLeftHeading('Contact')}
+					<div className="flex flex-wrap xl:block">
+						<SocialLink
+							text="Da Nang, Viet Nam"
+							icon={<MapPinIcon />}
+						/>
+						<SocialLink text="0785 497 999" icon={<PhoneIcon />} />
+						<SocialLink
+							text="minhypro"
+							link="https://github.com/minhypro"
+							icon={<VscGithubAlt className="h-6 w-6" />}
+						/>
+						<SocialLink
+							text="Minh Y (Mike) Le"
+							link="https://www.linkedin.com/in/minh-y-le-930118157/"
+							icon={<AiOutlineLinkedin className="h-6 w-6" />}
+						/>
+						<SocialLink
+							text="leminhy969@gmail.com"
+							link="mailto:leminhy969@gmail.com"
+							icon={<EnvelopeIcon />}
+						/>
+					</div>
+				</div>
+				<div className="my-4 xl:my-6">
+					{renderLeftHeading('Technical skill')}
 					{technologies.map(element => (
 						<div key={element.name} className="mt-6 inline-block">
 							<img
@@ -55,11 +70,8 @@ const CVHeader: FC = () => {
 						</div>
 					))}
 				</div>
-				<div className="my-6">
-					<h2 className="text-2xl font-bold uppercase text-cyan-700">
-						Soft skill
-					</h2>
-					<div className="absolute w-[80%] border border-cyan-700"></div>
+				<div className="my-4 xl:my-6">
+					{renderLeftHeading('Soft skill')}
 					<div className="my-2 break-words">
 						{[
 							'Self-learning',
@@ -73,19 +85,16 @@ const CVHeader: FC = () => {
 						].map((e, i) => (
 							<span
 								key={i}
-								className="mb-2 mr-2 inline-block rounded bg-cyan-700 px-2 text-white"
+								className="mb-2 mr-2 inline-block rounded bg-cyan-700 px-2 text-sm text-white xl:text-base"
 							>
 								{e}
 							</span>
 						))}
 					</div>
 				</div>
-				<div className="my-6">
-					<h2 className="text-2xl font-bold uppercase text-cyan-700">
-						Languages
-					</h2>
-					<div className="absolute w-[80%] border border-cyan-700"></div>
-					<div className="my-2 break-words">
+				<div className="my-4 xl:my-6">
+					{renderLeftHeading('Languages')}
+					<div className="my-2 break-words text-sm xl:text-base">
 						{[
 							{lang: 'Vietnamese', level: 'Native speaker'},
 							{lang: 'English', level: 'Upper-intermediate'},
@@ -101,61 +110,55 @@ const CVHeader: FC = () => {
 					</div>
 				</div>
 			</div>
-			<div className="basis-3/4 p-6 ">
-				<div className="relative mb-6">
-					<h2 className="text-4xl font-bold uppercase text-cyan-700">
-						Work Experience
-					</h2>
-					<div className="absolute left-[-20px] w-[105%] border border-cyan-700"></div>
+			<div className="mt-6 basis-3/4 xl:mt-0 xl:p-6 ">
+				<div className="relative xl:mb-6">
+					{renderRightHeading('Work Experience')}
+					<Experience
+						company="Techvify Software"
+						positions={[
+							{
+								title: 'Frontend Web Developer',
+								timeline: '09/2022 - Now',
+								description: [
+									'Offshore developer working with English-speaking partners',
+									'Collaborated with English-speaking partners to develop high-quality code that met project requirements',
+									'Contributed to the development of web applications using HTML, CSS, JavaScript, and React',
+									'Built and maintained reusable components and libraries to enhance development efficiency',
+									'Ensured code quality and maintainability by participating in code reviews and following best practices',
+									'Worked collaboratively with designers and back-end developers to deliver seamless user experiences',
+								],
+							},
+						]}
+					/>
+					<Experience
+						company="Ymese"
+						positions={[
+							{
+								title: 'WordPress Web developer',
+								timeline: '07/2021 - 07/2022',
+								description: [
+									'Build landing pages using a combination of WP editor and custom HTML/CSS',
+									'Customized and extended WordPress themes and plugins to meet specific project requirements',
+									'Provided ongoing support and maintenance for WordPress sites post-launch',
+								],
+							},
+							{
+								title: 'Quality Assurance Engineer',
+								timeline: '12/2020 - 07/2022',
+								description: [
+									'Multi-tasking and performing various roles as required',
+									'Managing a team of three developers and one QC professional',
+									"Ensuring the high quality and timely progress of the company's products",
+									'Taking ownership of product releases',
+									'Creating test plans, test cases, and conducting manual testing',
+									'Maintaining, creating, and troubleshooting automation test cases with Cypress',
+								],
+							},
+						]}
+					/>
 				</div>
-				<Experience
-					company="Techvify Software"
-					positions={[
-						{
-							title: 'Frontend Web Developer',
-							timeline: '09/2022 - Now',
-							description: [
-								'Offshore developer working with English-speaking partners',
-								'Collaborated with English-speaking partners to develop high-quality code that met project requirements',
-								'Contributed to the development of web applications using HTML, CSS, JavaScript, and React',
-								'Built and maintained reusable components and libraries to enhance development efficiency',
-								'Ensured code quality and maintainability by participating in code reviews and following best practices',
-								'Worked collaboratively with designers and back-end developers to deliver seamless user experiences',
-							],
-						},
-					]}
-				/>
-				<Experience
-					company="Ymese"
-					positions={[
-						{
-							title: 'WordPress Web developer',
-							timeline: '07/2021 - 07/2022',
-							description: [
-								'Build landing pages using a combination of WP editor and custom HTML/CSS',
-								'Customized and extended WordPress themes and plugins to meet specific project requirements',
-								'Provided ongoing support and maintenance for WordPress sites post-launch',
-							],
-						},
-						{
-							title: 'Quality Assurance Engineer',
-							timeline: '12/2020 - 07/2022',
-							description: [
-								'Multi-tasking and performing various roles as required',
-								'Managing a team of three developers and one QC professional',
-								"Ensuring the high quality and timely progress of the company's products",
-								'Taking ownership of product releases',
-								'Creating test plans, test cases, and conducting manual testing',
-								'Maintaining, creating, and troubleshooting automation test cases with Cypress',
-							],
-						},
-					]}
-				/>
-				<div className="relative mb-6">
-					<h2 className=" text-4xl font-bold uppercase text-cyan-700">
-						Projects
-					</h2>
-					<div className="absolute left-[-20px] w-[105%] border border-cyan-700"></div>
+				<div className="relative xl:mb-6">
+					{renderRightHeading('Projects')}
 					<Projects
 						name="CRM application - Finnish Client"
 						technologies="Typescript, ReactJS, Tailwind, Server-sent Events, Web Workers"

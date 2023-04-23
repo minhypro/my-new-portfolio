@@ -14,19 +14,22 @@ type Props = {
 
 const Experience: React.FC<Props> = ({company, positions}) => {
 	return (
-		<div className="my-6 ">
-			<h2 className="text-2xl">{company}</h2>
+		<div className="my-4 xl:my-6">
+			<h2 className="text-xl xl:text-2xl">{company}</h2>
 			{positions.map((position, i) => (
 				<React.Fragment key={i}>
-					<h3 className="text-xl font-bold capitalize text-cyan-700 ">
+					<h3 className="font-bold capitalize text-cyan-700 xl:text-xl ">
 						{position.title}
 					</h3>
-					<time className="italic text-cyan-700">
+					<time className="text-sm italic text-cyan-700 xl:text-base">
 						{position.timeline}
 					</time>
-					<ul className="my-4">
+					<ul className="my-2 xl:my-4">
 						{position.description.map((des, index) => (
-							<li key={index} className="my-2 flex items-center">
+							<li
+								key={index}
+								className="my-2 flex items-center text-sm xl:text-base"
+							>
 								<div className="mx-3 text-cyan-700">
 									<BiSquare />
 								</div>

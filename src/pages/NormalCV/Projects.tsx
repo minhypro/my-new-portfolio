@@ -9,11 +9,11 @@ type Props = {
 
 const Projects: React.FC<Props> = ({name, technologies, description}) => {
 	return (
-		<div className="my-6 ">
-			<h3 className="text-xl font-bold capitalize text-cyan-700 ">
+		<div className="my-4 xl:my-6">
+			<h3 className="font-bold capitalize text-cyan-700 xl:text-xl ">
 				{name}
 			</h3>
-			<div>
+			<div className="text-sm xl:text-base">
 				<div className="my-2 flex items-center">
 					<div className="mx-3 text-cyan-700">
 						<BiSquare />

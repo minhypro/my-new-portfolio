@@ -5,7 +5,7 @@ import CVHeader from './CVHeader'
 
 const CV: React.FC = () => {
 	return (
-		<div className="container my-6 bg-gray-100 p-6">
+		<div className="container bg-gray-100 p-6 xl:my-6">
 			<CVHeader />
 			<CVBody />
 		</div>
