@@ -10,7 +10,7 @@ const Homepage: FC<Layout> = ({children}) => {
 	return (
 		<div className="min-h-screen">
 			<Header />
-			<div className="container">{children}</div>
+			<div>{children}</div>
 		</div>
 	)
 }
