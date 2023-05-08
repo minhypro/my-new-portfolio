@@ -8,7 +8,7 @@ type Layout = {
 
 const Homepage: FC<Layout> = ({children}) => {
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen overflow-x-hidden">
 			<Header />
 			<div>{children}</div>
 		</div>
