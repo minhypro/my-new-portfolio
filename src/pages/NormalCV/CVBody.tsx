@@ -1,9 +1,10 @@
 import {AnimatePresence, motion} from 'framer-motion'
-import {FC} from 'react'
+import {FC, useContext} from 'react'
 import {AiOutlineLinkedin} from 'react-icons/ai'
 import {VscGithubAlt} from 'react-icons/vsc'
 
 import {technologies} from '@/constant/technicalConst'
+import {StateContext} from '@/context/globalState'
 
 import EnvelopeIcon from '../../components/ui/icon/EnvelopeIcon'
 import MapPinIcon from '../../components/ui/icon/MapPinIcon'
@@ -12,11 +13,9 @@ import SocialLink from '../../components/ui/SocialLink'
 import Experience from './Experience'
 import Projects from './Projects'
 
-interface CVBodyProps {
-	isDisappear: boolean
-}
+export const CVBody: FC = () => {
+	const {isAdvanced} = useContext(StateContext)
 
-export const CVBody: FC<CVBodyProps> = ({isDisappear}) => {
 	const renderLeftHeading = (text: string) => (
 		<>
 			<h2 className="text-2xl font-bold uppercase text-cyan-700">
@@ -37,7 +36,7 @@ export const CVBody: FC<CVBodyProps> = ({isDisappear}) => {
 
 	return (
 		<AnimatePresence>
-			{isDisappear ? null : (
+			{isAdvanced ? null : (
 				<motion.div
 					initial={{opacity: 0}}
 					animate={{opacity: 1}}

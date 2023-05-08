@@ -20,3 +20,7 @@ export const getCurrentWidth = () => {
 	}
 	return [currentWidth, currentContainer]
 }
+
+export const darkModeToggle = () => {
+	document.documentElement.classList.toggle('dark')
+}

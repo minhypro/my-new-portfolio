@@ -4,17 +4,16 @@ import {
 	useMotionValueEvent,
 	useScroll,
 } from 'framer-motion'
-import {useEffect, useRef, useState} from 'react'
+import {useContext, useEffect, useRef, useState} from 'react'
 import {AiOutlineCodeSandbox} from 'react-icons/ai'
 import {BsDownload} from 'react-icons/bs'
 
-import ToolTip from '../ui/Tooltip'
+import {StateContext} from '@/context/globalState'
 
-interface SidebarProps {
-	onClick: () => void
-}
+import ToolTip from '../../components/ui/Tooltip'
 
-export const FloatingSidebar: React.FC<SidebarProps> = ({onClick}) => {
+export const FloatingSidebar: React.FC = () => {
+	const {isAdvanced, isAdvancedToggle} = useContext(StateContext)
 	const scroll = useScroll()
 	const ref = useRef<HTMLDivElement>(null)
 	const [position, setPosition] = useState({
@@ -39,14 +38,19 @@ export const FloatingSidebar: React.FC<SidebarProps> = ({onClick}) => {
 	}, [])
 
 	const handleClick = () => {
-		onClick()
 		window.scrollTo({
 			top: 0,
 			behavior: 'smooth',
 		})
 
+		isAdvancedToggle()
 		setShouldDisplay(prev => !prev)
 	}
+
+	useEffect(() => {
+		if (!isAdvanced) return setShouldDisplay(true)
+	}, [isAdvanced])
+
 	return (
 		<>
 			<AnimatePresence>
@@ -89,7 +93,7 @@ export const FloatingSidebar: React.FC<SidebarProps> = ({onClick}) => {
 					</motion.div>
 				)}
 			</AnimatePresence>
-			<div className="flex flex-row gap-1">
+			{/* <div className="flex flex-row gap-1">
 				<a
 					className="inline-block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
 					href="main_cv.pdf"
@@ -103,7 +107,7 @@ export const FloatingSidebar: React.FC<SidebarProps> = ({onClick}) => {
 				>
 					<AiOutlineCodeSandbox />
 				</button>
-			</div>
+			</div> */}
 		</>
 	)
 }

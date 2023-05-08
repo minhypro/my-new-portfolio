@@ -1,21 +1,17 @@
 import {AnimatePresence, motion, Variants} from 'framer-motion'
-import {FC, useEffect, useRef, useState} from 'react'
+import {FC, useContext, useEffect, useRef, useState} from 'react'
 
+import {StateContext} from '@/context/globalState'
 import {getCurrentWidth} from '@/utils/utils'
 
 import Avatar from '../../components/ui/Avatar'
 
-interface CVHeadProps {
-	isDisappear: boolean
-}
-const CVHeader: FC<CVHeadProps> = ({isDisappear}) => {
+const CVHeader: FC = () => {
+	const {isAdvanced} = useContext(StateContext)
 	const [animationVariant, setAnimationVariant] = useState('first')
 	const avatarRef = useRef<HTMLDivElement>(null)
 	const [, currentContainer] = getCurrentWidth()
 	const xToMove =
-		// (avatarRef.current
-		// 	? avatarRef.current.getBoundingClientRect().left
-		// 	: 0) +
 		currentContainer / 2 -
 		(avatarRef.current ? avatarRef.current.clientWidth / 2 : 0)
 
@@ -34,22 +30,23 @@ const CVHeader: FC<CVHeadProps> = ({isDisappear}) => {
 	}
 
 	const animateStart = () => {
-		setAnimationVariant('second')
-		setTimeout(() => {
-			setAnimationVariant('third')
-		}, 1000)
+		setAnimationVariant('third')
+
+		// setTimeout(() => {
+		// 	setAnimationVariant('third')
+		// }, 1000)
 	}
 
 	useEffect(() => {
-		if (isDisappear && currentContainer > 768) {
+		if (isAdvanced && currentContainer > 768) {
 			animateStart()
 		} else {
 			setAnimationVariant('initial')
 		}
-	}, [isDisappear, currentContainer])
+	}, [isAdvanced, currentContainer])
 
 	return (
-		<div className="flex flex-col lg:flex-row">
+		<div className="grid lg:grid-cols-[0.25fr_0.75fr]">
 			<motion.div
 				variants={variants}
 				animate={animationVariant}
@@ -61,7 +58,7 @@ const CVHeader: FC<CVHeadProps> = ({isDisappear}) => {
 				</div>
 			</motion.div>
 			<AnimatePresence>
-				{isDisappear ? null : (
+				{isAdvanced ? null : (
 					<motion.div
 						initial={{opacity: 0}}
 						animate={{opacity: 1}}
