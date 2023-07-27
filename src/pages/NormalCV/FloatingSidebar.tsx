@@ -8,9 +8,12 @@ import {useContext, useEffect, useRef, useState} from 'react'
 import {AiOutlineCodeSandbox} from 'react-icons/ai'
 import {BsDownload} from 'react-icons/bs'
 
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from '@/components/ui/Tooltip/Tooltip'
 import {StateContext} from '@/context/globalState'
-
-import ToolTip from '../../components/ui/Tooltip'
 
 export const FloatingSidebar: React.FC = () => {
 	const {isAdvanced, isAdvancedToggle} = useContext(StateContext)
@@ -73,41 +76,36 @@ export const FloatingSidebar: React.FC = () => {
 						className={`absolute right-0 top-0 flex flex-col`}
 						exit={{x: -300, opacity: 0}}
 					>
-						<ToolTip tooltip="Download CV">
-							<a
-								className="inline-block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
-								href="main_cv.pdf"
-								download="Minh Y Le - Web Developer.pdf"
-							>
-								<BsDownload />
-							</a>
-						</ToolTip>
-						<ToolTip tooltip="Download CV">
-							<button
-								className="block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
-								onClick={handleClick}
-							>
-								<AiOutlineCodeSandbox />
-							</button>
-						</ToolTip>
+						<Tooltip>
+							<TooltipContent>Download CV</TooltipContent>
+							<TooltipTrigger>
+								<a
+									className="inline-block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
+									href="main_cv.pdf"
+									download="Minh Y Le - Web Developer.pdf"
+								>
+									<BsDownload />
+								</a>
+							</TooltipTrigger>
+						</Tooltip>
+						<div className="hidden">
+							<Tooltip>
+								<TooltipContent>
+									Try another version
+								</TooltipContent>
+								<TooltipTrigger>
+									<button
+										className="block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
+										onClick={handleClick}
+									>
+										<AiOutlineCodeSandbox />
+									</button>
+								</TooltipTrigger>
+							</Tooltip>
+						</div>
 					</motion.div>
 				)}
 			</AnimatePresence>
-			{/* <div className="flex flex-row gap-1">
-				<a
-					className="inline-block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
-					href="main_cv.pdf"
-					download="Minh Y Le - Web Developer.pdf"
-				>
-					<BsDownload />
-				</a>
-				<button
-					className="block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
-					onClick={handleClick}
-				>
-					<AiOutlineCodeSandbox />
-				</button>
-			</div> */}
 		</>
 	)
 }

@@ -45,6 +45,10 @@ const CVHeader: FC = () => {
 		}
 	}, [isAdvanced, currentContainer])
 
+	// const firstDate = new Date('Aug 2020')
+	// const diff = Date.now() - firstDate.getTime()
+	// console.log(Math.round(diff / (60*60*24*1000*365.25)))
+
 	return (
 		<div className="grid lg:grid-cols-[0.25fr_0.75fr]">
 			<motion.div
@@ -73,7 +77,7 @@ const CVHeader: FC = () => {
 								Web Developer
 							</h3>
 							<p className="text-justify text-sm xl:text-base">
-								Frontend web developer with nearly 2 years of
+								Frontend web developer with 3 years of
 								experience contributing primarily to the
 								frontend side of projects.
 								<br />

@@ -26,7 +26,12 @@ export const AdvancedCV: React.FC = () => {
 	console.log(isAdvanced)
 	return (
 		<AnimatePresence>
-			<button onClick={() => isAdvancedToggle()}>Click here</button>
+			<button
+				key={'testBtn-tobeRemoved'}
+				onClick={() => isAdvancedToggle()}
+			>
+				Click here
+			</button>
 			{isAdvanced ? (
 				<>
 					<motion.div

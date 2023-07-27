@@ -145,8 +145,8 @@ export const CVBody: FC = () => {
 									company="Techvify Software"
 									positions={[
 										{
-											title: 'Frontend Web Developer',
-											timeline: '09/2022 - Now',
+											title: 'Frontend Developer',
+											timeline: 'Sep 2022 - Now',
 											description: [
 												'Offshore developer working with English-speaking partners',
 												'Collaborated with English-speaking partners to develop high-quality code that met project requirements',
@@ -162,8 +162,8 @@ export const CVBody: FC = () => {
 									company="Ymese"
 									positions={[
 										{
-											title: 'WordPress Web developer',
-											timeline: '07/2021 - 07/2022',
+											title: 'Frontend Developer',
+											timeline: 'Sep 2021 - Sep 2022',
 											description: [
 												'Build landing pages using a combination of WP editor and custom HTML/CSS',
 												'Customized and extended WordPress themes and plugins to meet specific project requirements',
@@ -172,7 +172,7 @@ export const CVBody: FC = () => {
 										},
 										{
 											title: 'Quality Assurance Engineer',
-											timeline: '12/2020 - 07/2022',
+											timeline: 'Aug 2020 - Sep 2021',
 											description: [
 												'Multi-tasking and performing various roles as required',
 												'Managing a team of three developers and one QC professional',
@@ -186,21 +186,24 @@ export const CVBody: FC = () => {
 								/>
 							</div>
 							<div className="relative xl:mb-6">
-								{renderRightHeading('Projects')}
+								{renderRightHeading('Highlighted Projects')}
 								<Projects
-									name="CRM application - Finnish Client"
-									technologies="Typescript, ReactJS, Tailwind, Server-sent Events, Web Workers"
-									description="An in-house app designed to manage customer relations, facilitate mechanical equipment specification calculations, and produce related PDF documents."
+									name="CRM and CPQ Application - Finnish Client"
+									technologies="Typescript, ReactJS, Tailwind, Server-sent Events, Web Workers, Zustand, Tanstack libraries"
+									description="In-house apps CRM (Customer-relation-management) and CPQ (Configure, price and quote) designed to manage customer relations, facilitate mechanical equipment specification calculations, and produce related PDF documents."
+									contribution="Create a brand-new application utilizing a custom-built UI library, employing React, Tailwind, and incorporating suitable headless libraries when necessary. Develop and organize the source code entirely from the ground up."
 								/>
 								<Projects
-									name="Personal finance software - UK Client"
-									technologies="Typescript, ReactJS, MUI, Chart.js, Firebase"
-									description="A web-application that is the next generation of wealth management, personal finance software, allowing online, real-time money management, and secure multi banking in one place. End user can transfer money, download statements, view reports, search your history, use a net worth calculator, track investments, and more. "
+									name="Personal Finance Software - UK Client"
+									technologies="Typescript, ReactJS, MUI, Rechart, Firebase"
+									description="A web application that is the next generation of wealth management, and personal finance software, allowing online, real-time money management, and secure multi-banking in one place. End users can transfer money, download statements, view reports, search their history, use a net worth calculator, track investments, and more."
+									contribution="Enhance the application and elevate the user experience, integrate with third-party services. Additionally, customize various charts to effectively present detailed reports."
 								/>
 								<Projects
-									name="Thai learning application - Thai Client"
-									technologies="Typescript, ReactJS, Tailwind, GSAP, Framer Motion, Speech Recognition"
-									description="A language study app offers a variety of exercises and interactive lessons, as well as quizzes and games to enhance vocabulary, pronunciation, reading, and writing skills."
+									name="Password Protect WordPress Pro - Ymese's Product"
+									technologies="WordPress, Php, ReactJS"
+									description="A WordPress plugin to protect pages and posts by user roles or with multiple passwords; protect your entire website with a single password."
+									contribution="Take on multiple roles and actively participate in various aspects of this project, including product analysis, testing, and coding. Lead the initiative to significantly increase the number of active users from 3,000 to 25,000+."
 								/>
 							</div>
 						</div>

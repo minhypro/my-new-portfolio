@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev --port 3002",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --max-warnings=0",
@@ -12,7 +12,7 @@
     "types": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.23.1",
+    "@floating-ui/react": "^0.24.1",
     "@vercel/analytics": "^1.0.0",
     "framer-motion": "^10.12.4",
     "react": "^18.2.0",
