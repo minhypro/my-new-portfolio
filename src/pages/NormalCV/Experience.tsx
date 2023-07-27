@@ -28,9 +28,9 @@ const Experience: React.FC<Props> = ({company, positions}) => {
 						{position.description.map((des, index) => (
 							<li
 								key={index}
-								className="my-2 flex items-center text-sm xl:text-base"
+								className="my-2 flex items-start text-sm xl:text-base"
 							>
-								<div className="mx-3 text-cyan-700">
+								<div className="mr-2 mt-1 text-cyan-700 xl:mx-3">
 									<BiSquare />
 								</div>
 								<p className="text-justify">{des}</p>

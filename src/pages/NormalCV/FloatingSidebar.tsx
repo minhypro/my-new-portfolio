@@ -4,9 +4,9 @@ import {
 	useMotionValueEvent,
 	useScroll,
 } from 'framer-motion'
+import {Download} from 'lucide-react'
 import {useContext, useEffect, useRef, useState} from 'react'
 import {AiOutlineCodeSandbox} from 'react-icons/ai'
-import {BsDownload} from 'react-icons/bs'
 
 import {
 	Tooltip,
@@ -19,15 +19,18 @@ export const FloatingSidebar: React.FC = () => {
 	const {isAdvanced, isAdvancedToggle} = useContext(StateContext)
 	const scroll = useScroll()
 	const ref = useRef<HTMLDivElement>(null)
+
+	const mediaBreakpoints = 1280
+	const positionX = window.innerWidth >= mediaBreakpoints ? 48 : -4
 	const [position, setPosition] = useState({
-		x: 0,
+		x: positionX,
 		y: window.innerHeight / 2.5,
 	})
 
 	useMotionValueEvent(scroll.scrollY, 'change', latest => {
-		setPosition(prev => {
+		setPosition(() => {
 			const newYPosition = latest + window.innerHeight / 2.5
-			return {x: prev.x, y: newYPosition}
+			return {x: positionX, y: newYPosition}
 		})
 	})
 
@@ -80,11 +83,11 @@ export const FloatingSidebar: React.FC = () => {
 							<TooltipContent>Download CV</TooltipContent>
 							<TooltipTrigger>
 								<a
-									className="inline-block cursor-pointer rounded-full bg-sky-500 p-3 text-white"
+									className="inline-block cursor-pointer rounded-full bg-sky-500/75 p-2 text-white transition-colors hover:bg-sky-500"
 									href="main_cv.pdf"
 									download="Minh Y Le - Web Developer.pdf"
 								>
-									<BsDownload />
+									<Download />
 								</a>
 							</TooltipTrigger>
 						</Tooltip>

@@ -21,7 +21,7 @@ const Projects: React.FC<Props> = ({
 			</h3>
 			<div className="text-sm xl:text-base">
 				<div className="my-2 flex items-start">
-					<div className="mx-3 mt-1 text-cyan-700">
+					<div className="mr-2 mt-1 text-cyan-700 xl:mx-3">
 						<BiSquare />
 					</div>
 					<p className="text-justify">
@@ -30,7 +30,7 @@ const Projects: React.FC<Props> = ({
 					</p>
 				</div>
 				<div className="my-2 flex items-start">
-					<div className="mx-3 mt-1 text-cyan-700">
+					<div className="mr-2 mt-1 text-cyan-700 xl:mx-3">
 						<BiSquare />
 					</div>
 					<p className="text-justify">
@@ -39,7 +39,7 @@ const Projects: React.FC<Props> = ({
 					</p>
 				</div>
 				<div className="my-2 flex items-start">
-					<div className="mx-3 mt-1 text-cyan-700">
+					<div className="mr-2 mt-1 text-cyan-700 xl:mx-3">
 						<BiSquare />
 					</div>
 					<p className="text-justify">
