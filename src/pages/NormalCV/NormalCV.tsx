@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {FloatingSidebar} from '@/pages/NormalCV/FloatingSidebar'
+import {FloatingSidebar} from '@/components/Layout/FloatingSidebar'
 
 import {CVBody} from './CVBody'
 import CVHeader from './CVHeader'

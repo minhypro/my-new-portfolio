@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {colors: {
+			primary: '#7C3AED'
+		}},
 		container: {
 			center: true,
 			screens: {
@@ -13,6 +16,10 @@ module.exports = {
 				xl: '1280px',
 			},
 		},
+		fontFamily: {
+			'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
+		},
+		
 	},
 	plugins: [],
 	darkMode: 'class',

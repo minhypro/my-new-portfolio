@@ -2,6 +2,29 @@
 @tailwind utilities;
 @tailwind components;
 
+:target:before {
+	content: '';
+	display: block;
+	height: 75px;
+	margin: -75px 0 0;
+}
+
+@media (min-width: 768px) {
+	:target:before {
+		content: '';
+		display: block;
+		height: 200px;
+		margin: -200px 0 0;
+	}
+
+	#project:target:before {
+		content: '';
+		display: block;
+		height: 100px;
+		margin: -100px 0 0;
+	}
+}
+
 :root {
 	--scrollbarThumb: #155e75;
 	--scrollbarBg: #ffffff;
@@ -11,6 +34,7 @@
 * {
 	scrollbar-width: thin;
 	scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
+	scroll-behavior: smooth;
 }
 
 /* Chrome, Edge, and Safari */
@@ -26,4 +50,10 @@
 *::-webkit-scrollbar-thumb {
 	background-color: var(--scrollbarThumb);
 	border-radius: 4px;
+}
+
+.vertical-rl {
+	writingmode: 'vertical-rl';
+	-webkit-writing-mode: vertical-lr;
+	-ms-writing-mode: vertical-lr;
 }

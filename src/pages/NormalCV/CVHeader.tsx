@@ -1,5 +1,6 @@
 import {AnimatePresence, motion, Variants} from 'framer-motion'
 import {FC, useContext, useEffect, useRef, useState} from 'react'
+import {useWindowSize} from 'usehooks-ts'
 
 import {StateContext} from '@/context/globalState'
 import {getCurrentWidth} from '@/utils/utils'
@@ -10,6 +11,8 @@ const CVHeader: FC = () => {
 	const {isAdvanced} = useContext(StateContext)
 	const [animationVariant, setAnimationVariant] = useState('first')
 	const avatarRef = useRef<HTMLDivElement>(null)
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const {width: _} = useWindowSize()
 	const [, currentContainer] = getCurrentWidth()
 	const xToMove =
 		currentContainer / 2 -
@@ -31,10 +34,6 @@ const CVHeader: FC = () => {
 
 	const animateStart = () => {
 		setAnimationVariant('third')
-
-		// setTimeout(() => {
-		// 	setAnimationVariant('third')
-		// }, 1000)
 	}
 
 	useEffect(() => {
@@ -45,12 +44,8 @@ const CVHeader: FC = () => {
 		}
 	}, [isAdvanced, currentContainer])
 
-	// const firstDate = new Date('Aug 2020')
-	// const diff = Date.now() - firstDate.getTime()
-	// console.log(Math.round(diff / (60*60*24*1000*365.25)))
-
 	return (
-		<div className="grid lg:grid-cols-[0.25fr_0.75fr]">
+		<div className="grid grid-cols-1 dark:mt-10 lg:grid-cols-[0.25fr_0.75fr]">
 			<motion.div
 				variants={variants}
 				animate={animationVariant}

@@ -5,7 +5,7 @@ import Layout from '@/components/Layout/Layout'
 import {StateProvider} from '@/context/globalState'
 import {NormalCV} from '@/pages/NormalCV/NormalCV'
 
-// import {AdvancedCV} from './AdvancedCV/AdvancedCV'
+import {AdvancedCV} from './AdvancedCV/AdvancedCV'
 
 const App: FC = () => {
 	return (
@@ -13,7 +13,7 @@ const App: FC = () => {
 			<StateProvider>
 				<Layout>
 					<NormalCV />
-					{/* <AdvancedCV /> */}
+					<AdvancedCV />
 				</Layout>
 			</StateProvider>
 			<Analytics mode={'production'} />
