@@ -76,6 +76,11 @@ const Sidebar: React.FC = () => {
 							ref={el => (navRefArray.current[index] = el)}
 							key={ele.to}
 							href={ele.to}
+							onClick={() => {
+								setTimeout(() => {
+									setActiveTab(index)
+								}, 500)
+							}}
 							className="vertical-rl flex w-full items-center py-4 subpixel-antialiased hover:bg-neutral-900"
 						>
 							{ele.label}
