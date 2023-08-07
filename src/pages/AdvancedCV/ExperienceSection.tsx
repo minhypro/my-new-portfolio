@@ -33,7 +33,7 @@ export const ExperienceSection: React.FC = () => {
 							<h3 className="bg-gradient-to-tr from-sky-600 via-sky-400 to-sky-600 bg-clip-text text-2xl font-bold text-transparent">
 								Techvify
 							</h3>
-							<p className="text-lg">Sep 2022 - Now</p>
+							<p className="text-sm md:text-lg">Sep 2022 - Now</p>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -54,7 +54,9 @@ export const ExperienceSection: React.FC = () => {
 							<h3 className="bg-gradient-to-tr from-orange-600 via-orange-500 to-orange-600 bg-clip-text text-2xl font-bold text-transparent">
 								Ymese
 							</h3>
-							<p className="text-lg">Aug 2020 - Sep 2022</p>
+							<p className="text-sm md:text-lg">
+								Aug 2020 - Sep 2022
+							</p>
 						</div>
 					</Reveal>
 					<Reveal>

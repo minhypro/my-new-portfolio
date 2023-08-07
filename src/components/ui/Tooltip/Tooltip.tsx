@@ -173,13 +173,15 @@ export const TooltipContent = React.forwardRef<
 					ref={ref}
 					style={state.floatingStyles}
 					{...state.getFloatingProps(props)}
-					className="rounded bg-gray-900/80 p-2 text-white"
+					className={`${
+						state.getFloatingProps(props).className
+					} rounded bg-slate-800/70 p-2 text-white`}
 				>
 					{props.children}
 					<FloatingArrow
 						ref={state.arrowRef}
 						context={state.context}
-						className="fill-gray-900 opacity-80"
+						className="fill-slate-800 opacity-80"
 					/>
 				</div>
 			)}

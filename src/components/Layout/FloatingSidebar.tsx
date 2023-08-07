@@ -17,7 +17,7 @@ import {StateContext} from '@/context/globalState'
 import {useTabNavigation} from '@/context/sidebarNavigation'
 
 export const FloatingSidebar: React.FC = () => {
-	const {isAdvanced, isAdvancedToggle} = useContext(StateContext)
+	const {isAdvancedToggle} = useContext(StateContext)
 	const setActiveTab = useTabNavigation(state => state.setActiveTab)
 	const scroll = useScroll()
 	const ref = useRef<HTMLDivElement>(null)
@@ -38,6 +38,7 @@ export const FloatingSidebar: React.FC = () => {
 	})
 
 	const [shouldDisplay, setShouldDisplay] = useState(false)
+	const [showAdvancedTooltip, setShowAdvancedTooltip] = useState(false)
 
 	useEffect(() => {
 		const timeoutId = setTimeout(() => {
@@ -58,8 +59,11 @@ export const FloatingSidebar: React.FC = () => {
 
 	useEffect(() => {
 		setActiveTab(0)
-		if (!isAdvanced) return setShouldDisplay(true)
-	}, [isAdvanced])
+		const timeoutId = setInterval(() => {
+			setShowAdvancedTooltip(true)
+		}, 5555)
+		return () => clearTimeout(timeoutId)
+	}, [])
 
 	return (
 		<AnimatePresence>
@@ -95,10 +99,16 @@ export const FloatingSidebar: React.FC = () => {
 						</TooltipTrigger>
 					</Tooltip>
 
-					<Tooltip>
-						<TooltipContent>Try another version</TooltipContent>
+					<Tooltip placement="bottom" open={showAdvancedTooltip}>
+						<TooltipContent className="animate-pulse">
+							Try another version
+						</TooltipContent>
 						<TooltipTrigger>
 							<button
+								onMouseOver={() => setShowAdvancedTooltip(true)}
+								onMouseLeave={() =>
+									setShowAdvancedTooltip(false)
+								}
 								className="inline-block cursor-pointer rounded-full bg-sky-500/75 p-2 text-white transition-colors hover:bg-sky-500"
 								onClick={handleClick}
 							>
