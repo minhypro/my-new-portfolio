@@ -5,14 +5,14 @@ import {darkModeToggle} from '@/utils/utils'
 export const StateContext = createContext<{
 	isAdvanced: boolean
 	isAdvancedToggle: () => void
-}>({isAdvanced: false, isAdvancedToggle: () => false})
+}>({isAdvanced: true, isAdvancedToggle: () => false})
 
 export const StateProvider: React.FC<{children: React.ReactNode}> = ({
 	children,
 }: {
 	children: React.ReactNode
 }) => {
-	const [isAdvanced, setIsAdvanced] = useState(false)
+	const [isAdvanced, setIsAdvanced] = useState(true)
 	const isAdvancedToggle = () => {
 		setIsAdvanced(prev => !prev)
 		darkModeToggle()

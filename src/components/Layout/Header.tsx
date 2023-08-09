@@ -3,7 +3,7 @@ import {FC} from 'react'
 const Header: FC = () => {
 	return (
 		<header
-			className={`fixed top-0 z-20 hidden h-16 w-[calc(100vw-60px)] items-center justify-between bg-stone-600/10 px-4 font-poppins text-white backdrop-blur-sm dark:flex xl:h-20 xl:px-8`}
+			className={`fixed top-0 z-20 hidden h-16 w-[calc(100vw-60px)] items-center justify-between bg-stone-600/10 px-4 font-poppins text-white shadow-2xl backdrop-blur-sm dark:flex xl:h-20 xl:px-8`}
 		>
 			<div className="flex gap-4">
 				<a
@@ -60,8 +60,9 @@ const Header: FC = () => {
 			</div>
 			<a
 				className="rounded border border-primary px-6 py-2 font-bold uppercase text-primary outline-none transition-all duration-150 ease-linear hover:bg-primary hover:text-white focus:outline-none active:bg-primary xl:px-8"
-				href="main_cv.pdf"
-				download="Minh Y Le - Web Developer.pdf"
+				target="_blank"
+				rel="noreferrer"
+				href="MinhYLe_FE_Developer.pdf"
 			>
 				Resume
 			</a>

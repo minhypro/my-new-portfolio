@@ -4,7 +4,7 @@ import {
 	useMotionValueEvent,
 	useScroll,
 } from 'framer-motion'
-import {Download, Wand2} from 'lucide-react'
+import {FileText, Wand2} from 'lucide-react'
 import {useContext, useEffect, useRef, useState} from 'react'
 import {useWindowSize} from 'usehooks-ts'
 
@@ -87,14 +87,15 @@ export const FloatingSidebar: React.FC = () => {
 					exit={{x: -300, opacity: 0}}
 				>
 					<Tooltip>
-						<TooltipContent>Download CV</TooltipContent>
+						<TooltipContent>Resume</TooltipContent>
 						<TooltipTrigger>
 							<a
 								className="inline-block cursor-pointer rounded-full bg-sky-500/75 p-2 text-white transition-colors hover:bg-sky-500"
-								href="main_cv.pdf"
-								download="Minh Y Le - Web Developer.pdf"
+								href="MinhYLe_FE_Developer.pdf"
+								target="_blank"
+								rel="noreferrer"
 							>
-								<Download />
+								<FileText />
 							</a>
 						</TooltipTrigger>
 					</Tooltip>

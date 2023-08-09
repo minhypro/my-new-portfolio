@@ -30,7 +30,7 @@ export const ExperienceSection: React.FC = () => {
 				<div className="my-4 gap-2">
 					<Reveal width="100%">
 						<div className="flex items-center justify-between">
-							<h3 className="bg-gradient-to-tr from-sky-600 via-sky-400 to-sky-600 bg-clip-text text-2xl font-bold text-transparent">
+							<h3 className="bg-gradient-to-tr from-sky-700 via-sky-400 to-sky-900 bg-clip-text text-3xl font-bold text-transparent">
 								Techvify
 							</h3>
 							<p className="text-sm md:text-lg">Sep 2022 - Now</p>
@@ -51,7 +51,7 @@ export const ExperienceSection: React.FC = () => {
 				<div className="my-4 gap-2">
 					<Reveal width="100%">
 						<div className="flex items-center justify-between">
-							<h3 className="bg-gradient-to-tr from-orange-600 via-orange-500 to-orange-600 bg-clip-text text-2xl font-bold text-transparent">
+							<h3 className="bg-gradient-to-tr from-orange-700 via-orange-400 to-orange-900 bg-clip-text text-3xl font-bold text-transparent">
 								Ymese
 							</h3>
 							<p className="text-sm md:text-lg">
