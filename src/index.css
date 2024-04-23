@@ -53,7 +53,7 @@
 }
 
 .vertical-rl {
-	writingmode: 'vertical-rl';
+	writing-mode: 'vertical-rl';
 	-webkit-writing-mode: vertical-lr;
 	-ms-writing-mode: vertical-lr;
 }
