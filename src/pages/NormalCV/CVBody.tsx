@@ -142,11 +142,25 @@ export const CVBody: FC = () => {
 							<div className="relative xl:mb-6">
 								{renderRightHeading('Work Experience')}
 								<Experience
+									company="Techsoft Technology"
+									positions={[
+										{
+											title: 'Frontend Developer',
+											timeline: 'Nov 2023 - Now',
+											description: [
+												'Collaborated closely with EU market partners to develop tailored solutions that meet business and user needs.',
+												'Established coding conventions, project structure, and development standards to ensure team consistency and efficiency',
+												'Ensured high-quality, maintainable code by actively participating in code reviews and adhering to industry best practices.',
+											],
+										},
+									]}
+								/>
+								<Experience
 									company="Techvify Software"
 									positions={[
 										{
 											title: 'Frontend Developer',
-											timeline: 'Sep 2022 - Now',
+											timeline: 'Sep 2022 - Oct 2023',
 											description: [
 												'Offshore developer working with English-speaking partners',
 												'Collaborated with English-speaking partners to develop high-quality code that met project requirements',
@@ -187,6 +201,18 @@ export const CVBody: FC = () => {
 							</div>
 							<div className="relative xl:mb-6">
 								{renderRightHeading('Highlighted Projects')}
+								<Projects
+									name="Recornect products - Netherlands Client"
+									technologies="Typescript, ReactJS, Tailwind, Shadcn, Zustand, WebPush, Tanstack libraries, SignalR, Sipjs, PWA, ElectronJS"
+									description="Worked on changing an on-premise solution into a digital one for people with mental health challenges. This project involved creating a web app, desktop app, and mobile app to make sure the solution was easy to use on different platforms"
+									contribution="Researched and chose the right technologies for the project, then created a proof of concept. Led a team of three frontend developers and planned the structure and technology used for the frontend. Set up guidelines and standards to keep the project organized and easy to maintain. Successfully delivered the project, which made the client happy and led to a new, bigger project"
+								/>
+								<Projects
+									name="Dichoi solution: Booking platform - Korean Client"
+									technologies="Typescript, ReactJS, Tailwind, Antd, Redux, Firebase"
+									description="Booking Management Dashboard designed to handle reservations, manage property availability, and coordinate schedules. Features include real-time chat for seamless communication and tools to manage people, properties, and bookings efficiently."
+									contribution="Guided and supported junior developers in task completion, ensuring timely app delivery while maintaining high standards of quality. Consistently met project deadlines and contributed to client satisfaction through effective communication and problem-solving."
+								/>
 								<Projects
 									name="CRM and CPQ Application - Finnish Client"
 									technologies="Typescript, ReactJS, Tailwind, Server-sent Events, Web Workers, Zustand, Tanstack libraries"

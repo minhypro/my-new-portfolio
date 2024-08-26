@@ -4,6 +4,7 @@ import {useWindowSize} from 'usehooks-ts'
 
 import {StateContext} from '@/context/globalState'
 import {getCurrentWidth} from '@/utils/utils'
+import {differenceInYears} from '@/utils/yearToNow'
 
 import Avatar from '../../components/ui/Avatar'
 
@@ -72,9 +73,9 @@ const CVHeader: FC = () => {
 								Web Developer
 							</h3>
 							<p className="text-justify text-sm xl:text-base">
-								Frontend web developer with 3 years of
-								experience contributing primarily to the
-								frontend side of projects.
+								Frontend web developer with {differenceInYears}{' '}
+								years of experience contributing primarily to
+								the frontend side of projects.
 								<br />
 								Skilled in React framework, creating reusable
 								components, and building libraries. <br />

@@ -5,6 +5,7 @@ import {Reveal} from '@/components/Reveal'
 import {Smile, Terminal} from '@/components/ui/icon'
 import {Tag} from '@/components/ui/Tag'
 import {useTabNavigation} from '@/context/sidebarNavigation'
+import {differenceInYears} from '@/utils/yearToNow'
 
 export const AboutSection: React.FC = () => {
 	const setActiveTab = useTabNavigation(state => state.setActiveTab)
@@ -31,8 +32,9 @@ export const AboutSection: React.FC = () => {
 				<div className="md:my-8">
 					<Reveal>
 						<p className="my-4">
-							I've spent the last 3 years building and scaling
-							software for some pretty cool companies.
+							I've spent the last {differenceInYears} years
+							building and scaling software for some pretty cool
+							companies.
 						</p>
 					</Reveal>
 					<Reveal>
@@ -72,13 +74,15 @@ export const AboutSection: React.FC = () => {
 								<Tag>CSS</Tag>
 								<Tag>React</Tag>
 								<Tag>Redux</Tag>
+								<Tag>Electron</Tag>
 								<Tag>Zustand</Tag>
 								<Tag>Tailwind</Tag>
 								<Tag>Git</Tag>
 								<Tag>MongoDB</Tag>
 								<Tag>NodeJS</Tag>
 								<Tag>Nest</Tag>
-								<Tag>Clickup</Tag>
+								<Tag>Jira</Tag>
+								<Tag>Azure</Tag>
 							</div>
 						</Reveal>
 					</div>
@@ -102,7 +106,7 @@ export const AboutSection: React.FC = () => {
 								<Tag>Angular</Tag>
 								<Tag>Golang</Tag>
 								<Tag>Python</Tag>
-								<Tag>AWS</Tag>
+								<Tag>Obsidian</Tag>
 								<Tag>GraphQL</Tag>
 							</div>
 						</Reveal>

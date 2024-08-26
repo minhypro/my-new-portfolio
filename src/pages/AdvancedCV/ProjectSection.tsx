@@ -40,6 +40,77 @@ export const ProjectSection: React.FC = () => {
 			<div className="my-10">
 				<div className="my-4 gap-2">
 					<Reveal>
+						<div className="text-primary">Netherlands Client</div>
+					</Reveal>
+					<Reveal>
+						<h3 className="text-xl font-semibold">
+							Recornect products
+						</h3>
+					</Reveal>
+					<Reveal>
+						<p className="my-4">
+							Worked on changing an on-premise solution into a
+							digital one for people with mental health
+							challenges. This project involved creating a web
+							app, desktop app, and mobile app to make sure the
+							solution was easy to use on different platforms.
+						</p>
+					</Reveal>
+				</div>
+
+				<Reveal>
+					<div className="flex flex-wrap items-center gap-3">
+						<Tag>Typescript</Tag>
+						<Tag>ReactJS</Tag>
+						<Tag>Tailwind</Tag>
+						<Tag>Shadcn</Tag>
+						<Tag>Tanstack libraries</Tag>
+						<Tag>SignalR</Tag>
+						<Tag>Sipjs</Tag>
+						<Tag>Zustand</Tag>
+						<Tag>PWA</Tag>
+						<Tag>ElectronJS</Tag>
+						<Tag>WebPush</Tag>
+					</div>
+				</Reveal>
+			</div>
+
+			<div className="my-10">
+				<div className="my-4 gap-2">
+					<Reveal>
+						<div className="text-primary">Korean Client</div>
+					</Reveal>
+					<Reveal>
+						<h3 className="text-xl font-semibold">
+							Dichoi solution – Booking platform
+						</h3>
+					</Reveal>
+					<Reveal>
+						<p className="my-4">
+							Booking Management Dashboard designed to handle
+							reservations, manage property availability, and
+							coordinate schedules. Features include real-time
+							chat for seamless communication and tools to manage
+							people, properties, and bookings efficiently
+						</p>
+					</Reveal>
+				</div>
+
+				<Reveal>
+					<div className="flex flex-wrap items-center gap-3">
+						<Tag>Typescript</Tag>
+						<Tag>ReactJS</Tag>
+						<Tag>Tailwind</Tag>
+						<Tag>Antd</Tag>
+						<Tag>Redux</Tag>
+						<Tag>Firebase</Tag>
+					</div>
+				</Reveal>
+			</div>
+
+			<div className="my-10">
+				<div className="my-4 gap-2">
+					<Reveal>
 						<div className="text-primary">Finnish Client</div>
 					</Reveal>
 					<Reveal>
@@ -71,6 +142,7 @@ export const ProjectSection: React.FC = () => {
 					</div>
 				</Reveal>
 			</div>
+
 			<div className="my-10">
 				<div className="my-4 gap-2">
 					<Reveal>

@@ -36,7 +36,7 @@ export const AdvancedCV: React.FC = () => {
 				<div className="mb-14 min-h-[50vh]">
 					<SlideIn width="100%">
 						<h1 className="mt-8 text-5xl font-bold">
-							Xin chào, I&apos;m Mike
+							Xin chào, I&apos;m Minh Ý (Mike)
 						</h1>
 					</SlideIn>
 					<SlideIn width="100%" from="left">

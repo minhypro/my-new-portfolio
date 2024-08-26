@@ -30,10 +30,35 @@ export const ExperienceSection: React.FC = () => {
 				<div className="my-4 gap-2">
 					<Reveal width="100%">
 						<div className="flex items-center justify-between">
+							<h3 className="bg-gradient-to-tr from-[rgb(234,31,104)] via-red-400 to-[rgb(234,31,104)] bg-clip-text text-3xl font-bold text-transparent">
+								Techsoft
+							</h3>
+							<p className="text-sm md:text-lg">Nov 2023 - Now</p>
+						</div>
+					</Reveal>
+					<Reveal>
+						<p className="my-4">
+							Collaborated with EU market partners to create
+							customized solutions that met their needs. Set up
+							guidelines and standards to keep the project
+							organized and easy to maintain. Ensured high-quality
+							code through active participation in code reviews
+							and defining best practices
+						</p>
+					</Reveal>
+				</div>
+			</div>
+
+			<div className="my-10 border-b border-neutral-300/10">
+				<div className="my-4 gap-2">
+					<Reveal width="100%">
+						<div className="flex items-center justify-between">
 							<h3 className="bg-gradient-to-tr from-sky-700 via-sky-400 to-sky-900 bg-clip-text text-3xl font-bold text-transparent">
 								Techvify
 							</h3>
-							<p className="text-sm md:text-lg">Sep 2022 - Now</p>
+							<p className="text-sm md:text-lg">
+								Sep 2022 - Oct 2023
+							</p>
 						</div>
 					</Reveal>
 					<Reveal>
